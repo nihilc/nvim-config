@@ -1,7 +1,7 @@
 function Map(keymaps)
     local default_opts = {
         silent = true,
-        remap = true
+        remap = false
     }
     for mode, mode_keymaps in pairs(keymaps) do
         for lhs, args in pairs(mode_keymaps) do
@@ -27,7 +27,7 @@ local default_keymaps = {
         -- Buffers
         ["<tab>"] = { "<cmd>bn<cr>", "Buffer next" },
         ["<s-tab>"] = { "<cmd>bp<cr>", "Buffer prev" },
-        ["<leader>bn"] = { "<cmd>new<cr>", "Buffer new" },
+        ["<leader>bn"] = { "<cmd>enew<cr>", "Buffer new" },
         ["<leader>bx"] = { "<cmd>bdelete<cr>", "Buffer close" },
     },
     i = {
@@ -37,7 +37,9 @@ local default_keymaps = {
         ["<m-h>"] = { "<left>", "Move left" },
         ["<m-l>"] = { "<right>", "Move right" },
     },
-    v = {},
+    v = {
+        ["<leader>p"] = { "\"0p", "Paste last yank" },
+    },
     t = {},
     c = {
         -- Movement in command mode
