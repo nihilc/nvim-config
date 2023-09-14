@@ -6,7 +6,7 @@ local g = vim.g
 g.mapleader         = " "
 g.maplocalleader    = " "
 
-g.python3_host_prog = "/usr/bin/python3"
+g.python3_host_prog = "~/.local/share/python3/bin/python"
 
 -- Disable providers
 g.loaded_node_provider = 0
