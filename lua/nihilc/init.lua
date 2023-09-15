@@ -30,3 +30,5 @@ require("lazy").setup("nihilc.plugins",{
         notify = false,
     },
 })
+
+vim.cmd("colorscheme catppuccin")
