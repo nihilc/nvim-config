@@ -4,6 +4,9 @@ require("nihilc.configs.options")
 -- Setup keymaps
 require("nihilc.configs.keymaps")
 
+-- Setup autocmd
+require("nihilc.configs.autocmd")
+
 -- Setup plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
