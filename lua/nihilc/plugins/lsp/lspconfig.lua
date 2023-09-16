@@ -45,10 +45,13 @@ return {
 
 		local servers = {
 			"html",
+			"emmet_ls",
 			"cssls",
 			"tsserver",
-			"pyright",
+
+			"bashls",
 			"clangd",
+			"pyright",
 		}
 		for _, server in ipairs(servers) do
 			lspconfig[server].setup({
@@ -56,13 +59,6 @@ return {
 				on_attach = on_attach,
 			})
 		end
-
-		-- configure emmet language server
-		lspconfig["emmet_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
