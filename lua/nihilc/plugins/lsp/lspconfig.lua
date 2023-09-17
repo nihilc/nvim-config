@@ -27,7 +27,7 @@ return {
 					["]d"] = { vim.diagnostic.goto_next, "Go to next diagnostic", opts },
 					["<leader>la"] = { vim.lsp.buf.code_action, "LSP code actions", opts },
 					["<leader>lr"] = { vim.lsp.buf.rename, "LSP rename", opts },
-					["<leader>lf"] = { vim.lsp.buf.format, "LSP format", opts },
+					["<leader>lf"] = { vim.lsp.buf.format, "LSP format", opts }, -- autoformat with null-ls
 					["<leader>ld"] = { vim.diagnostic.open_float, "Show line diagnostics", opts },
 					["<leader>lD"] = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics", opts },
 				},
@@ -78,6 +78,14 @@ return {
 						},
 					},
 				},
+			},
+		})
+
+		lspconfig["intelephense"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			init_options = {
+				globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
 			},
 		})
 	end,
