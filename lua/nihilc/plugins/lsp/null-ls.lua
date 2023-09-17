@@ -22,6 +22,7 @@ return {
 			formatting.clang_format.with({
 				extra_args = { "--fallback-style=Google" },
 			}),
+			diagnostics.cpplint, -- Just for Google style
 
 			-- PHP
 			diagnostics.phpcs.with({

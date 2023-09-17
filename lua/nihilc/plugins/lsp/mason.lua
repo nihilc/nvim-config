@@ -45,6 +45,7 @@ return {
 				"stylua", -- lua formatter
 				"shellcheck", -- bash linter
 				"beautysh", -- bash linter
+				"cpplint", -- c/cpp formatter
 				"cland-format", -- c/cpp formatter
 				"phpcs", -- php linter
 				"phpcbf", -- php formater
