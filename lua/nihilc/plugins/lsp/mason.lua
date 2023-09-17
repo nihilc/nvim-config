@@ -1,13 +1,16 @@
 return {
 	"williamboman/mason.nvim",
+	event = "VeryLazy",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"jayp0521/mason-null-ls.nvim",
+		"jay-babu/mason-nvim-dap.nvim",
 	},
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
 		local mason_null_ls = require("mason-null-ls")
+		local mason_nvim_dap = require("mason-nvim-dap")
 
 		-- enable mason and configure icons
 		mason.setup({
@@ -52,7 +55,15 @@ return {
 				"prettier", -- js/ts formatter
 				"eslint_d", -- js/ts linter
 			},
-			-- auto-install configured servers (with lspconfig)
+			-- auto-install configured servers
+			automatic_installation = true,
+		})
+
+		mason_nvim_dap.setup({
+			ensure_installed = {
+				"codelldb", -- c/cpp debuger
+			},
+			-- auto-install configured servers
 			automatic_installation = true,
 		})
 	end,

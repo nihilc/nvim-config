@@ -27,6 +27,8 @@ return {
 				h = { name = "Help" },
 				t = { name = "Toggle" },
 				b = { name = "Buffer" },
+				l = { name = "LSP" },
+				d = { name = "Debuger" },
 			},
 		})
 	end,
