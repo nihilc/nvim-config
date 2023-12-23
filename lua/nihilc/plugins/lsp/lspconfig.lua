@@ -43,6 +43,11 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		-- Change the Diagnostic prefix in the virtual text
+		vim.diagnostic.config({
+			virtual_text = false,
+		})
+
 		local servers = {
 			"html",
 			"emmet_ls",
